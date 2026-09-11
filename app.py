@@ -30,6 +30,15 @@ def normalizar_valor(valor_raw):
 # Interface Web Streamlit
 st.set_page_config(page_title="Conferência de Boletos", page_icon="📑", layout="centered")
 
+# Exibição da Logo da MRC (busca primeiro a imagem do repositório da intranet)
+try:
+    st.image("https://raw.githubusercontent.com/mrcimoveis-coder/intranet/main/logo.jpeg", width=180)
+except Exception:
+    try:
+        st.image("logo.jpeg", width=180)
+    except Exception:
+        pass
+
 st.title("📑 Conferência Final de Boletos")
 st.write("Validação automática do PDF da Crítica de Boletos contra a aba CONF do Excel.")
 
